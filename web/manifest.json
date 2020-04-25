@@ -1,0 +1,22 @@
+{
+    "name": "Fight Covid-19",
+    "short_name": "Fight Covid-19",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1C1D3C",
+    "theme_color": "#FFFFFF",
+    "description": "Application that provides statistics and information about Covid-19",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [{
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
