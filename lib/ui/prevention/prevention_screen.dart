@@ -178,6 +178,7 @@ class PreventionScreen extends StatelessWidget {
             color: AppColors.preventionBackgroundColor,
             child: Image.asset(
               AssetImages.covid19PreventionDosAndDonts,
+              fit: BoxFit.fitWidth,
             ),
           ),
         ),

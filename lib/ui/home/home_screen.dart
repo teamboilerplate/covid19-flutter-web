@@ -1,8 +1,8 @@
+import 'package:covid19/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19/constants/colors.dart';
 import 'package:covid19/constants/dimens.dart';
 import 'package:covid19/constants/strings.dart';
-import 'package:covid19/constants/text_styles.dart';
 import 'package:covid19/res/asset_images.dart';
 import 'package:covid19/ui/home/home_navigator.dart';
 import 'package:covid19/ui/home/widgets/home_card_widget.dart';
@@ -43,28 +43,23 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   // Page Title
-                  Text(
-                    Strings.appSlogan,
-                    style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                      fontSize: screenWidth / 12,
+                  Opacity(
+                    opacity: 0,
+                    child: Text(
+                      Strings.appSlogan,
+                      style: TextStyles.statisticsHeadingTextStlye.copyWith(
+                        fontSize: 0,
+                      ),
                     ),
                   ),
 
-                  // Vertical Spacing
-                  SizedBoxHeightWidget(screenHeight / 30),
-
                   Container(
-                    height: screenHeight / 3,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        fit: BoxFit.scaleDown,
+                    height: screenHeight / 2,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.contain,
                         image: AssetImage(
                           AssetImages.home,
-                        ),
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(
-                          screenHeight * 0.075,
                         ),
                       ),
                       color: Colors.transparent,
@@ -83,7 +78,6 @@ class HomeScreen extends StatelessWidget {
                           backgroundColor: AppColors.primaryColor,
                           title: Strings.statisticsTitle,
                           imagePath: AssetImages.statistics,
-                          backgroundImage: true,
                           route: HomeRoutes.latestNumbers.name,
                         ),
                       ),

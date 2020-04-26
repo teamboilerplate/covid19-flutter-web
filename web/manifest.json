@@ -3,7 +3,7 @@
     "short_name": "Fight Covid-19",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#1C1D3C",
+    "background_color": "#222A45",
     "theme_color": "#FFFFFF",
     "description": "Application that provides statistics and information about Covid-19",
     "orientation": "portrait-primary",

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:covid19/data/countries_list_data.dart';
-import 'package:covid19/data/network/constants/endpoints.dart';
 import 'package:covid19/data/repository/base_repository.dart';
 import 'package:covid19/data/repository/user_repository.dart';
 import 'package:covid19/models/application/country_information_model.dart';
@@ -120,16 +119,11 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
 
   // Building the row item for the Searchable Country Dialog
   Widget _buildDialogItem(Countries country) {
-    debugPrint('${Endpoints.baseUrlCountryFlags}${country.iso2}/flat/32.png');
     return Row(
       children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-              '${Endpoints.baseUrlCountryFlags}${country.iso2}/flat/32.png',
-            )),
-          ),
+        Image.asset(
+          'assets/flags/${country.iso2}.png',
+          height: 32,
         ),
         const SizedBoxWidthWidget(15),
         Flexible(
@@ -466,8 +460,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                     ),
                                     Flexible(
                                       flex: 1,
-                                      child: Image.network(
-                                        '${Endpoints.baseUrlCountryFlags}$selectedCountryISO2/flat/32.png',
+                                      child: Image.asset(
+                                        'assets/flags/$selectedCountryISO2.png',
+                                        height: 32,
                                       ),
                                     ),
                                     Flexible(
