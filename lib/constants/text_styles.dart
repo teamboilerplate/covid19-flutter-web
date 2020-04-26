@@ -52,7 +52,7 @@ class TextStyles {
 
   static const statisticsAccentTextStyle = TextStyle(
     fontWeight: FontWeight.w600,
-    color: AppColors.blueColor,
+    color: AppColors.accentColor,
   );
 
   static const infoCountTextStyle = TextStyle(

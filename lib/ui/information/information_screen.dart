@@ -1,4 +1,3 @@
-import 'package:covid19/res/asset_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -173,8 +172,36 @@ class InformationScreen extends StatelessWidget {
               bottom: Dimens.verticalPadding / 0.15,
             ),
             color: AppColors.preventionBackgroundColor,
-            child: Image.asset(
-              AssetImages.covid19AGlobalHealthCrisis,
+            child: Image.network(
+              Endpoints.fetchInformatiionGraphic,
+              fit: BoxFit.cover,
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent loadingProgress) {
+                if (loadingProgress == null) return child;
+                return Container(
+                  height: screenHeight,
+                  decoration: const BoxDecoration(
+                      color: Color.fromARGB(100, 105, 105, 105)),
+                  child: FittedBox(
+                    fit: BoxFit.none,
+                    child: SizedBox(
+                      height: 100,
+                      width: 100,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: const Padding(
+                          padding: EdgeInsets.all(25.0),
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                                AppColors.accentColor),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ),
@@ -192,8 +219,8 @@ class InformationScreen extends StatelessWidget {
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           icon: Icon(
             Covid19Icons.keyboardArrowLeft,
-            size: screenWidth / 20,
-            color: AppColors.whiteColor,
+            size: screenWidth / 25,
+            color: AppColors.offBlackColor,
           ),
           label: const Text(
             'Go Back',

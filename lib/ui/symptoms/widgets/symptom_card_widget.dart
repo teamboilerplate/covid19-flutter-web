@@ -80,9 +80,24 @@ class SymptomCardWidget extends StatelessWidget {
             padding: EdgeInsets.only(
               top: screenHeight / 50,
             ),
-            child: Image.asset(
+            child: Image.network(
               imageURL,
               height: screenHeight / 8.5,
+              fit: BoxFit.cover,
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent loadingProgress) {
+                if (loadingProgress == null) return child;
+                return Container(
+                  width: screenHeight / 8.5,
+                  height: screenHeight / 8.5,
+                  decoration: const BoxDecoration(
+                    color: AppColors.offBlackColor,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(50),
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         )

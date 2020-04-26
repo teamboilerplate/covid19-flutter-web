@@ -41,92 +41,91 @@ class InfoCard extends StatelessWidget {
         vertical: screenHeight / 55,
         horizontal: screenWidth / 25,
       ),
-      decoration: const BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 0),
-            blurRadius: 1,
-            color: AppColors.boxShadowColor,
-          ),
-        ],
-        borderRadius: BorderRadius.all(
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 0.5,
+          color: AppColors.offBlackColor.withOpacity(0.5),
+        ),
+        borderRadius: const BorderRadius.all(
           Radius.circular(5),
         ),
         color: AppColors.whiteColor,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: screenWidth / 75,
-              vertical: screenHeight / 250,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(5),
+      child: RepaintBoundary(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth / 75,
+                vertical: screenHeight / 250,
               ),
-              color: infoColor.withOpacity(0.3),
-            ),
-            child: Text(
-              '+ $infoValueNew',
-              style: TextStyles.infoCountTextStyle.copyWith(
-                fontSize: screenWidth / 28,
-                color: infoColor,
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(5),
+                ),
+                color: infoColor.withOpacity(0.3),
               ),
-            ),
-          ),
-          // Vertical Spacing
-          SizedBoxHeightWidget(screenHeight / 50),
-
-          // Info Icon
-          Container(
-            padding: const EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  screenWidth / 25,
+              child: Text(
+                '+ $infoValueNew',
+                style: TextStyles.infoCountTextStyle.copyWith(
+                  fontSize: screenWidth / 28,
+                  color: infoColor,
                 ),
               ),
-              color: infoColor.withAlpha(50),
-              border: Border.all(
-                width: 0.5,
-                color: infoColor,
-              ),
             ),
-            child: Icon(
-              infoIcon,
-              color: infoColor,
-              size: screenWidth / 25,
-            ),
-          ),
+            // Vertical Spacing
+            SizedBoxHeightWidget(screenHeight / 50),
 
-          // Vertical Spacing
-          SizedBoxHeightWidget(screenHeight / 50),
-
-          // Information Text
-          RichText(
-            text: TextSpan(
-              children: <TextSpan>[
-                TextSpan(
-                  text: '$infoValue \n',
-                  style: TextStyles.infoCountTextStyle.copyWith(
-                    fontSize: screenWidth / 25,
-                    color: infoColor,
+            // Info Icon
+            Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(
+                    screenWidth / 25,
                   ),
                 ),
-                TextSpan(
-                  text: infoLabel.toUpperCase(),
-                  style: TextStyles.infoLabelTextStyle.copyWith(
-                    fontSize: screenWidth / 40,
-                  ),
+                color: infoColor.withAlpha(50),
+                border: Border.all(
+                  width: 0.5,
+                  color: infoColor,
                 ),
-              ],
+              ),
+              child: Icon(
+                infoIcon,
+                color: infoColor,
+                size: screenWidth / 25,
+              ),
             ),
-            textAlign: TextAlign.center,
-          ),
-        ],
+
+            // Vertical Spacing
+            SizedBoxHeightWidget(screenHeight / 50),
+
+            // Information Text
+            RichText(
+              text: TextSpan(
+                children: <TextSpan>[
+                  TextSpan(
+                    text: '$infoValue \n',
+                    style: TextStyles.infoCountTextStyle.copyWith(
+                      fontSize: screenWidth / 25,
+                      color: infoColor,
+                    ),
+                  ),
+                  TextSpan(
+                    text: infoLabel.toUpperCase(),
+                    style: TextStyles.infoLabelTextStyle.copyWith(
+                      fontSize: screenWidth / 40,
+                    ),
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,5 @@
-import 'package:covid19/models/application/ip_model.dart';
 import 'package:flutter/material.dart';
+import 'package:covid19/models/application/ip_model.dart';
 import 'package:covid19/models/application/country_information_model.dart';
 import 'package:covid19/models/statistics/statistics_response_model.dart';
 import 'package:covid19/models/statistics/country_statistics_day_model.dart';

@@ -51,7 +51,7 @@ class MythBustersScreen extends StatelessWidget {
                       onTap: () => Navigator.of(context).pop(),
                       child: Icon(
                         Covid19Icons.keyboardArrowLeft,
-                        size: screenWidth / 12,
+                        size: screenWidth / 18,
                         color: AppColors.blackColor,
                       ),
                     ),

@@ -5,6 +5,7 @@ import 'package:covid19/data/repository/base_repository.dart';
 import 'package:covid19/data/repository/user_repository.dart';
 import 'package:covid19/models/application/country_information_model.dart';
 import 'package:covid19/models/application/ip_model.dart';
+import 'package:covid19/utils/emoji_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:covid19/constants/app_theme.dart';
@@ -121,9 +122,11 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
   Widget _buildDialogItem(Countries country) {
     return Row(
       children: <Widget>[
-        Image.asset(
-          'assets/flags/${country.iso2}.png',
-          height: 32,
+        Text(
+          Emoji.byISOCode('flag_${country.iso2.toLowerCase()}').char,
+          style: const TextStyle(
+            fontSize: 30,
+          ),
         ),
         const SizedBoxWidthWidget(15),
         Flexible(
@@ -240,7 +243,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                 onTap: () => Navigator.of(context).pop(),
                                 child: Icon(
                                   Covid19Icons.keyboardArrowLeft,
-                                  size: screenWidth / 12,
+                                  size: screenWidth / 18,
                                   color: AppColors.blackColor,
                                 ),
                               ),
@@ -460,9 +463,16 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                     ),
                                     Flexible(
                                       flex: 1,
-                                      child: Image.asset(
-                                        'assets/flags/$selectedCountryISO2.png',
-                                        height: 32,
+                                      child: Text(
+                                        // Adding null checker clause if the data is not initialised yet
+                                        selectedCountryISO2 != ''
+                                            ? Emoji.byISOCode(
+                                                    'flag_${selectedCountryISO2.toLowerCase()}')
+                                                .char
+                                            : '',
+                                        style: const TextStyle(
+                                          fontSize: 30,
+                                        ),
                                       ),
                                     ),
                                     Flexible(

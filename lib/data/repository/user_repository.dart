@@ -1,5 +1,5 @@
-import 'package:covid19/models/application/ip_model.dart';
 import 'package:flutter/material.dart';
+import 'package:covid19/models/application/ip_model.dart';
 import 'package:covid19/data/network/constants/endpoints.dart';
 import 'package:covid19/data/repository/base_repository.dart';
 import 'package:covid19/models/statistics/statistics_response_model.dart';

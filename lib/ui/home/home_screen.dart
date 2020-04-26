@@ -1,8 +1,8 @@
-import 'package:covid19/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19/constants/colors.dart';
 import 'package:covid19/constants/dimens.dart';
 import 'package:covid19/constants/strings.dart';
+import 'package:covid19/constants/text_styles.dart';
 import 'package:covid19/res/asset_images.dart';
 import 'package:covid19/ui/home/home_navigator.dart';
 import 'package:covid19/ui/home/widgets/home_card_widget.dart';
@@ -15,7 +15,6 @@ import 'package:covid19/widgets/sized_box_height_widget.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final screenWidth = DeviceUtils.getScaledWidth(context, 1);
     final screenHeight = DeviceUtils.getScaledHeight(context, 1);
     return Material(
       child: Scaffold(

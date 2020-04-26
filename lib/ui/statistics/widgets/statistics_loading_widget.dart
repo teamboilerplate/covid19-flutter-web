@@ -41,7 +41,7 @@ class HomeLoadingWidget extends StatelessWidget {
               // Back Icon
               Icon(
                 Covid19Icons.keyboardArrowLeft,
-                size: screenWidth / 12,
+                size: screenWidth / 18,
                 color: AppColors.blackColor,
               ),
 

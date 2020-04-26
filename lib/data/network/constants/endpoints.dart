@@ -10,8 +10,8 @@ class Endpoints {
   // base url to retrive iso2 code based on IP
   static const baseUrlCurrentCountry = 'https://freegeoip.live/json';
 
-  // base url to retrieve country flags
-  static const baseUrlCountryFlags = 'https://www.countryflags.io/';
+  // base url for Home Screen Graphic
+  static const baseUrlGraphics = 'https://boilerplate.in/covid19';
 
   static const preventionDataSourceReferenceURL =
       'https://visme.co/blog/coronavirus-prevention';
@@ -35,6 +35,13 @@ class Endpoints {
   // fetch Statistics about a particulr country
   static const _fetchCountryStatistics = '/total/country/';
 
+  // fetch Covid-19 prevention Infographic
+  static const _fetchPreventionGraphic = '/prevention.jpg';
+
+  // fetch Covid-19 information Infographic
+  static const _fetchInformationGraphic =
+      '/COVID-19-A-Global-Health-Crisis.jpg';
+
   static String get fetchIP => baseUrlIP;
 
   static String get fetchCurrentCountry => baseUrlCurrentCountry;
@@ -43,4 +50,10 @@ class Endpoints {
 
   static String get fetchCountryStatistics =>
       baseUrlStatistics + _fetchCountryStatistics;
+
+  static String get fetchPreventionGraphic =>
+      baseUrlGraphics + _fetchPreventionGraphic;
+
+  static String get fetchInformatiionGraphic =>
+      baseUrlGraphics + _fetchInformationGraphic;
 }
