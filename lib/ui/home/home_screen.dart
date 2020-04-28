@@ -15,6 +15,7 @@ import 'package:covid19/widgets/sized_box_height_widget.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = DeviceUtils.getScaledWidth(context, 1);
     final screenHeight = DeviceUtils.getScaledHeight(context, 1);
     return Material(
       child: Scaffold(
@@ -42,15 +43,15 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   // Page Title
-                  Opacity(
-                    opacity: 0,
-                    child: Text(
-                      Strings.appSlogan,
-                      style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                        fontSize: 0,
-                      ),
+                  Text(
+                    Strings.appSlogan,
+                    style: TextStyles.statisticsHeadingTextStlye.copyWith(
+                      fontSize: screenWidth / 12,
                     ),
                   ),
+
+                  // Vertical Spacing
+                  SizedBoxHeightWidget(screenHeight / 250),
 
                   Container(
                     height: screenHeight / 2,
@@ -58,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                       image: DecorationImage(
                         fit: BoxFit.contain,
                         image: AssetImage(
-                          AssetImages.home,
+                          AssetImages.homeGraphic,
                         ),
                       ),
                       color: Colors.transparent,
@@ -66,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   // Vertical Spacing
-                  SizedBoxHeightWidget(screenHeight / 30),
+                  SizedBoxHeightWidget(screenHeight / 250),
 
                   Row(
                     children: <Widget>[

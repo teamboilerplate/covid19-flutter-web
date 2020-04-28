@@ -26,8 +26,6 @@ dependencies:
   provider: ^4.0.4
   # Package to pain charts on Screen
   fl_chart: ^0.8.7
-  # Package to launch OS specific URLs
-  url_launcher: ^5.4.2
 
 dev_dependencies:
   flutter_test:
@@ -51,14 +49,11 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/animations/
 
   fonts:
     # Default font to be used all over the application
     - family: QuickSand
       fonts:
-        - asset: assets/fonts/Quicksand-Regular.ttf
-          weight: 400
         - asset: assets/fonts/Quicksand-Medium.ttf
           weight: 500
         - asset: assets/fonts/Quicksand-Bold.ttf

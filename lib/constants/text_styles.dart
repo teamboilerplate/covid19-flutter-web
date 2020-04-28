@@ -27,7 +27,7 @@ class TextStyles {
   );
 
   static const errorDescriptionTextStlye = TextStyle(
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     color: AppColors.blackColor,
   );
 
@@ -46,7 +46,7 @@ class TextStyles {
   );
 
   static const statisticsSubHeadingTextStlye = TextStyle(
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     color: AppColors.offBlackColor,
   );
 

@@ -1,6 +1,6 @@
+import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:covid19/constants/dimens.dart';
 import 'package:covid19/constants/strings.dart';
 import 'package:covid19/constants/colors.dart';
@@ -78,31 +78,10 @@ class PreventionScreen extends StatelessWidget {
                                 // Launcing the URL of the blog post
                                 // throwing an error if the user doesn't have any browswer to open the link (Shouldn't ever happen)
                                 recognizer: TapGestureRecognizer()
-                                  ..onTap = () async => await canLaunch(
-                                          Endpoints
-                                              .preventionDataSourceReferenceURL)
-                                      ? launch(Endpoints
-                                          .preventionDataSourceReferenceURL)
-                                      : throw 'Could not launch Refernce URL',
-                              ),
-                              const TextSpan(
-                                text: Strings.writtenBy,
-                              ),
-                              // Launcing the URL of the Author's Website
-                              // throwing an error if the user doesn't have any browswer to open the link (Shouldn't ever happen)
-                              TextSpan(
-                                text: Strings.authorPrevetnionGraphic,
-                                style: const TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  color: AppColors.accentBlueColor,
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () async => await canLaunch(
-                                          Endpoints
-                                              .preventionDataSourceAuthorURL)
-                                      ? launch(Endpoints
-                                          .preventionDataSourceAuthorURL)
-                                      : throw 'Could not launch Refernce URL',
+                                  ..onTap = () => html.window.open(
+                                      Endpoints
+                                          .preventionDataSourceReferenceURL,
+                                      'tab'),
                               ),
                             ],
                           ),
