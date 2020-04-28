@@ -109,24 +109,25 @@ class HomeLoadingWidget extends StatelessWidget {
               SizedBoxHeightWidget(screenHeight / 50),
 
               // Details Button
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: Dimens.horizontalPadding / 0.75,
-                    ),
-                    child: Text(
-                      Strings.details,
-                      maxLines: 2,
-                      softWrap: true,
-                      style: TextStyles.statisticsAccentTextStyle.copyWith(
-                        fontSize: screenWidth / 22,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // TODO :- Uncomment when Global details are added
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.end,
+              //   children: <Widget>[
+              //     Padding(
+              //       padding: const EdgeInsets.only(
+              //         right: Dimens.horizontalPadding / 0.75,
+              //       ),
+              //       child: Text(
+              //         Strings.details,
+              //         maxLines: 2,
+              //         softWrap: true,
+              //         style: TextStyles.statisticsAccentTextStyle.copyWith(
+              //           fontSize: screenWidth / 22,
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
 
               // Vertical Spacing
               SizedBoxHeightWidget(screenHeight / 75),
@@ -276,24 +277,25 @@ class HomeLoadingWidget extends StatelessWidget {
               SizedBoxHeightWidget(screenHeight / 200),
 
               // Details Button
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: Dimens.horizontalPadding / 0.75,
-                    ),
-                    child: Text(
-                      Strings.details,
-                      maxLines: 2,
-                      softWrap: true,
-                      style: TextStyles.statisticsAccentTextStyle.copyWith(
-                        fontSize: screenWidth / 22,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              // TODO :- Uncomment when Country sepific details are added
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.end,
+              //   children: <Widget>[
+              //     Padding(
+              //       padding: const EdgeInsets.only(
+              //         right: Dimens.horizontalPadding / 0.75,
+              //       ),
+              //       child: Text(
+              //         Strings.details,
+              //         maxLines: 2,
+              //         softWrap: true,
+              //         style: TextStyles.statisticsAccentTextStyle.copyWith(
+              //           fontSize: screenWidth / 22,
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
 
               // Vertical Spacing
               SizedBoxHeightWidget(screenHeight / 75),

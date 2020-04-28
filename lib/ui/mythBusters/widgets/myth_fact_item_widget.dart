@@ -29,40 +29,40 @@ class MythFactItemWidget extends StatelessWidget {
         // to give the affect of the shadow
         // Using [PositionedDirectional] to position the shadow besides the
         // main card to provide the required affect
-        PositionedDirectional(
-          bottom: -screenHeight / 80,
-          start: screenWidth / 13,
-          child: Container(
-            width: screenWidth / 1.2,
-            margin: EdgeInsets.only(
-              bottom: screenHeight / 45,
-            ),
-            padding: EdgeInsets.only(
-              left: screenWidth / 10,
-              top: screenHeight / 50,
-              right: screenWidth / 25,
-              bottom: screenHeight / 30,
-            ),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(20),
-              ),
-              color: shadowColor,
-            ),
-            // Adding the same text as in the Myth/Fact so that size of the item
-            // remains the same
-            // Setting the opacity to 0 so that it's not visible
-            child: Opacity(
-              opacity: 0,
-              child: Text(
-                text,
-                style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                  fontSize: screenWidth / 20,
-                ),
-              ),
-            ),
-          ),
-        ),
+        // PositionedDirectional(
+        //   bottom: -screenHeight / 80,
+        //   start: screenWidth / 13,
+        //   child: Container(
+        //     width: screenWidth / 1.2,
+        //     margin: EdgeInsets.only(
+        //       bottom: screenHeight / 45,
+        //     ),
+        //     padding: EdgeInsets.only(
+        //       left: screenWidth / 10,
+        //       top: screenHeight / 50,
+        //       right: screenWidth / 25,
+        //       bottom: screenHeight / 30,
+        //     ),
+        //     decoration: BoxDecoration(
+        //       borderRadius: const BorderRadius.all(
+        //         Radius.circular(20),
+        //       ),
+        //       color: shadowColor,
+        //     ),
+        //     // Adding the same text as in the Myth/Fact so that size of the item
+        //     // remains the same
+        //     // Setting the opacity to 0 so that it's not visible
+        //     child: Opacity(
+        //       opacity: 0,
+        //       child: Text(
+        //         text,
+        //         style: TextStyles.statisticsHeadingTextStlye.copyWith(
+        //           fontSize: screenWidth / 20,
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
 
         // Using [Align] to centre the item with the text (Myth/Fact)
         Align(
@@ -78,20 +78,20 @@ class MythFactItemWidget extends StatelessWidget {
               right: screenWidth / 25,
               bottom: screenHeight / 30,
             ),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  offset: Offset(-1, 1),
-                  blurRadius: 1,
-                  color: AppColors.boxShadowColor,
+                  offset: const Offset(-2, 2),
+                  blurRadius: 2,
+                  color: shadowColor,
                 ),
                 BoxShadow(
-                  offset: Offset(1, -1),
-                  blurRadius: 1,
-                  color: AppColors.boxShadowColor,
+                  offset: const Offset(2, -2),
+                  blurRadius: 2,
+                  color: shadowColor,
                 ),
               ],
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(20),
               ),
               color: AppColors.whiteColor,

@@ -101,8 +101,15 @@ class MythBustersScreen extends StatelessWidget {
                       ],
                     ),
 
+                    Text(
+                      'Click to know facts',
+                      style: TextStyles.faqBodyTextStyle.copyWith(
+                        fontSize: screenWidth / 30,
+                      ),
+                    ),
+
                     // Vertical Spacing
-                    SizedBoxHeightWidget(screenHeight / 50),
+                    SizedBoxHeightWidget(screenHeight / 100),
                   ],
                 ),
               ),

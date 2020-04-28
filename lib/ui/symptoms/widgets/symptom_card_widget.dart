@@ -90,9 +90,9 @@ class SymptomCardWidget extends StatelessWidget {
                 return Container(
                   width: screenHeight / 8.5,
                   height: screenHeight / 8.5,
-                  decoration: const BoxDecoration(
-                    color: AppColors.offBlackColor,
-                    borderRadius: BorderRadius.all(
+                  decoration: BoxDecoration(
+                    color: AppColors.offBlackColor.withOpacity(0.5),
+                    borderRadius: const BorderRadius.all(
                       Radius.circular(50),
                     ),
                   ),

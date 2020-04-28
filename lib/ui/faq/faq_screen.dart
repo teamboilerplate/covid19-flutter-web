@@ -213,9 +213,22 @@ class _FAQScreenState extends State<FAQScreen> {
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: faqData.length,
-                    itemBuilder: (BuildContext context, int index) => FAQItem(
-                      faqData[index],
-                    ),
+                    itemBuilder: (BuildContext context, int index) {
+                      if (index == faqData.length - 1) {
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                            bottom: Dimens.verticalPadding / 0.2,
+                          ),
+                          child: FAQItem(
+                            faqData[index],
+                          ),
+                        );
+                      } else {
+                        return FAQItem(
+                          faqData[index],
+                        );
+                      }
+                    },
                   ),
                 ),
               ),

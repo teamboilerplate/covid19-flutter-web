@@ -336,26 +336,27 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                               SizedBoxHeightWidget(screenHeight / 50),
 
                               // Details Button
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      right: Dimens.horizontalPadding / 0.75,
-                                    ),
-                                    child: Text(
-                                      Strings.details,
-                                      maxLines: 2,
-                                      softWrap: true,
-                                      style: TextStyles
-                                          .statisticsAccentTextStyle
-                                          .copyWith(
-                                        fontSize: screenWidth / 22,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // TODO :- Global Details
+                              // Row(
+                              //   mainAxisAlignment: MainAxisAlignment.end,
+                              //   children: <Widget>[
+                              //     Padding(
+                              //       padding: const EdgeInsets.only(
+                              //         right: Dimens.horizontalPadding / 0.75,
+                              //       ),
+                              //       child: Text(
+                              //         Strings.details,
+                              //         maxLines: 2,
+                              //         softWrap: true,
+                              //         style: TextStyles
+                              //             .statisticsAccentTextStyle
+                              //             .copyWith(
+                              //           fontSize: screenWidth / 22,
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
 
                               // Vertical Spacing
                               SizedBoxHeightWidget(screenHeight / 75),
@@ -491,26 +492,27 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                               SizedBoxHeightWidget(screenHeight / 200),
 
                               // Details Button
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      right: Dimens.horizontalPadding / 0.75,
-                                    ),
-                                    child: Text(
-                                      Strings.details,
-                                      maxLines: 2,
-                                      softWrap: true,
-                                      style: TextStyles
-                                          .statisticsAccentTextStyle
-                                          .copyWith(
-                                        fontSize: screenWidth / 22,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // TODO :- Country Specific Details
+                              // Row(
+                              //   mainAxisAlignment: MainAxisAlignment.end,
+                              //   children: <Widget>[
+                              //     Padding(
+                              //       padding: const EdgeInsets.only(
+                              //         right: Dimens.horizontalPadding / 0.75,
+                              //       ),
+                              //       child: Text(
+                              //         Strings.details,
+                              //         maxLines: 2,
+                              //         softWrap: true,
+                              //         style: TextStyles
+                              //             .statisticsAccentTextStyle
+                              //             .copyWith(
+                              //           fontSize: screenWidth / 22,
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
 
                               // Vertical Spacing
                               SizedBoxHeightWidget(screenHeight / 75),
