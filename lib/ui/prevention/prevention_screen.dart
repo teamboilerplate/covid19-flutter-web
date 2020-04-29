@@ -52,13 +52,13 @@ class PreventionScreen extends StatelessWidget {
                         text: TextSpan(children: <TextSpan>[
                           // Dialog Title - Data Source
                           TextSpan(
-                            text: '${Strings.dataSource}\n\n\n',
+                            text: '${Strings.dataSource}\n\n',
                             style: TextStyles.hightlightText.copyWith(
                               fontSize: screenWidth / 20,
                             ),
                           ),
 
-                          // Dialoog description referncing and linking the blog post
+                          // Dialog description referncing and linking the blog post
                           // and the Author
                           TextSpan(
                             style: TextStyles.statisticsSubHeadingTextStlye
@@ -75,7 +75,7 @@ class PreventionScreen extends StatelessWidget {
                                   decoration: TextDecoration.underline,
                                   color: AppColors.accentBlueColor,
                                 ),
-                                // Launcing the URL of the blog post
+                                // Launching the URL of the blog post
                                 // throwing an error if the user doesn't have any browswer to open the link (Shouldn't ever happen)
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () => html.window.open(

@@ -101,6 +101,7 @@ class MythBustersScreen extends StatelessWidget {
                       ],
                     ),
 
+                    // Instruction text
                     Text(
                       'Click to know facts',
                       style: TextStyles.faqBodyTextStyle.copyWith(
@@ -114,10 +115,9 @@ class MythBustersScreen extends StatelessWidget {
                 ),
               ),
 
-              // Symptom Items
-              // Wrapping the contents in a [Flexible] to make sure that the remaining space
-              // in the screen is filled (Removing this causes the overflow error to occur as
-              // a column does not allow scrolling inherently)
+              // Myth Buster Items
+              // Wrapping the contents in a [Expanded] to make sure that the remaining space
+              // in the screen is filled
               Expanded(
                 flex: 5,
                 // Defining a [SingleChildScrollView] to scroll only the Symptom Items and not the header
@@ -131,6 +131,17 @@ class MythBustersScreen extends StatelessWidget {
                       shrinkWrap: true,
                       itemCount: mythBusterData.length,
                       itemBuilder: (context, index) {
+                        // Adding Padding to the first item for the top shadow to be visible
+                        if (index == 0) {
+                          return Padding(
+                            padding: EdgeInsets.only(top: screenHeight / 200),
+                            child: MythCardWidget(
+                              myth: mythBusterData[index].myth,
+                              fact: mythBusterData[index].fact,
+                            ),
+                          );
+                        }
+
                         // Adding extra padding at the bottom in case of the last element
                         if (index == mythBusterData.length - 1) {
                           return Padding(
@@ -143,10 +154,13 @@ class MythBustersScreen extends StatelessWidget {
                             ),
                           );
                         }
-                        return MythCardWidget(
-                          myth: mythBusterData[index].myth,
-                          fact: mythBusterData[index].fact,
-                        );
+                        // Returning the normal widget in other cases
+                        else {
+                          return MythCardWidget(
+                            myth: mythBusterData[index].myth,
+                            fact: mythBusterData[index].fact,
+                          );
+                        }
                       },
                     ),
                   ),

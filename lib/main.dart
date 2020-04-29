@@ -1,13 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:covid19/constants/app_theme.dart';
 import 'package:covid19/constants/strings.dart';
 import 'package:covid19/data/repository/base_repository.dart';
 import 'package:covid19/data/repository/user_repository.dart';
 import 'package:covid19/stores/statistics/statistics_notifier.dart';
 import 'package:covid19/ui/home/home_navigator.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   final BaseRepository repository = UserRepository();

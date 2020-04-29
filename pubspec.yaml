@@ -26,6 +26,8 @@ dependencies:
   provider: ^4.0.4
   # Package to pain charts on Screen
   fl_chart: ^0.8.7
+  # Package to leverage Firebase Analytics
+  firebase: ^7.3.0
 
 dev_dependencies:
   flutter_test:
@@ -54,9 +56,9 @@ flutter:
     # Default font to be used all over the application
     - family: QuickSand
       fonts:
-        - asset: assets/fonts/Quicksand-Medium.ttf
+        - asset: assets/fonts/Quicksand-Medium.woff
           weight: 500
-        - asset: assets/fonts/Quicksand-Bold.ttf
+        - asset: assets/fonts/Quicksand-Bold.woff
           weight: 700
     - family: Covid19Icons
       fonts:

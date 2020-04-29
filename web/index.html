@@ -9,6 +9,10 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <link rel="canonical" href="https://covid19.boilerplate.in" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+
+    <link rel="preload" as="font" href="assets/assets/fonts/Quicksand-Medium.woff" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="assets/assets/fonts/Quicksand-Bold.woff" type="font/woff" crossorigin="anonymous">
 
     <!-- iOS meta tags & icons -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -54,6 +58,29 @@
             });
         }
     </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDlYb-JyaSckI4ovmhFDN6vJohrg5k5AHg",
+            authDomain: "boilerplate-fight-covid19.firebaseapp.com",
+            databaseURL: "https://boilerplate-fight-covid19.firebaseio.com",
+            projectId: "boilerplate-fight-covid19",
+            storageBucket: "boilerplate-fight-covid19.appspot.com",
+            messagingSenderId: "873278788251",
+            appId: "1:873278788251:web:06477bcb725bca9678ac3e",
+            measurementId: "G-XL1C8CYPMM"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
     <script src="main.dart.js?version=1.3" type="application/javascript"></script>
 </body>
 

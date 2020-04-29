@@ -516,12 +516,12 @@ class DailyBarChartData extends StatelessWidget {
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
               fontSize: screenWidth / 33,
             ),
-            margin: screenWidth / 22,
+            margin: screenWidth / 35,
             reservedSize: screenWidth / 15,
             getTitles: (value) {
-              if (value == 2) {
-                return '${getUnitValue(countryStatisticsConfirmedList[2].cases.toDouble())}';
-              } else if (value == 6) {
+              if (value == 3) {
+                return '${getUnitValue(countryStatisticsConfirmedList[0].cases.toDouble())}';
+              } else if (value == 7) {
                 return '${getUnitValue(countryStatisticsConfirmedList[3].cases.toDouble())}';
               } else if (value == 10) {
                 return '${getUnitValue(leftTitleTopBuffer)}';
@@ -679,7 +679,7 @@ class WeeklyAreaGraphData extends StatelessWidget {
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
               fontSize: screenWidth / 33,
             ),
-            margin: screenWidth / 22,
+            margin: screenWidth / 35,
             reservedSize: screenWidth / 15,
 
             // Setting the cases values using the [getUnitValue] method across the graph
@@ -1144,5 +1144,5 @@ String getUnitValue(double count) {
   final int exp = math.log(count) ~/ math.log(1000);
   final String value = 'KMGTPE'[exp - 1];
 
-  return '${(count / math.pow(1000, exp)).toStringAsFixed(0)} $value';
+  return '${(count / math.pow(1000, exp)).toStringAsFixed(1)} $value';
 }
