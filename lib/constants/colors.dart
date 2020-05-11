@@ -13,6 +13,8 @@ class AppColors {
 
   static const Color transparentColor = Color(0x00000000);
 
+  static const Color homeCardLoadingColor = Color(0xFF606883);
+
   static const Color whiteColor = Color(0xFFFFFFFF);
 
   static const Color blackColor = Color(0xFF000000);
@@ -30,6 +32,8 @@ class AppColors {
   static const Color confirmedColor = Color(0xFFFF9800);
 
   static const Color recoveredColor = Color(0xFF4CAF50);
+
+  static const Color activeColor = Color(0xFF456DF0);
 
   static const Color deadColor = Color(0xFFF44336);
 

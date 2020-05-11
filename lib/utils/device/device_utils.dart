@@ -19,17 +19,9 @@ class DeviceUtils {
   ///
   static double getScaledSize(BuildContext context, double scale) =>
       scale *
-          (MediaQuery
-              .of(context)
-              .orientation == Orientation.portrait
-              ? MediaQuery
-              .of(context)
-              .size
-              .width
-              : MediaQuery
-              .of(context)
-              .size
-              .height);
+      (MediaQuery.of(context).orientation == Orientation.portrait
+          ? MediaQuery.of(context).size.width
+          : MediaQuery.of(context).size.height);
 
   ///
   /// accepts a double [scale] and returns scaled sized based on the screen
@@ -45,10 +37,7 @@ class DeviceUtils {
   static double getScaledHeight(BuildContext context, double scale) =>
       scale * MediaQuery.of(context).size.height;
 
-  static double getFractionFromHeight(BuildContext context,
-      double scaledHeight) =>
-      scaledHeight / MediaQuery
-          .of(context)
-          .size
-          .height;
+  static double getFractionFromHeight(
+          BuildContext context, double scaledHeight) =>
+      scaledHeight / MediaQuery.of(context).size.height;
 }

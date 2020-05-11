@@ -1,3 +1,4 @@
+import 'package:covid19/utils/device/device_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
@@ -165,6 +166,7 @@ class MyAlertDialog<T> extends StatelessWidget {
       ),
       elevation: 5,
       child: Container(
+        width: DeviceUtils.getScaledHeight(context, 0.5),
         child: dialogChild,
       ),
     );

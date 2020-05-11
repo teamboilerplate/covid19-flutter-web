@@ -4,7 +4,7 @@ import 'package:covid19/constants/font_family.dart';
 import 'package:covid19/constants/text_styles.dart';
 
 final ThemeData themeData = ThemeData(
-  fontFamily: FontFamily.quickSand,
+  fontFamily: FontFamily.sansSerif,
   brightness: Brightness.light,
   primaryColor: AppColors.primaryColor,
   primaryColorBrightness: Brightness.light,

@@ -1,9 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:covid19/constants/colors.dart';
 import 'package:covid19/res/asset_images.dart';
-import 'package:covid19/ui/mythBusters/widgets/myth_fact_item_widget.dart';
+import 'package:covid19/ui/mythBusters/widgets/myth_fact_item_widget_mobile.dart';
 import 'package:covid19/utils/device/device_utils.dart';
 import 'package:covid19/widgets/sized_box_height_widget.dart';
 
@@ -12,10 +11,11 @@ import 'package:covid19/widgets/sized_box_height_widget.dart';
 /// **Requires**
 /// 1. [myth] - To display the myth on the Cards on the [MythBustersScreen]
 /// 2. [fact] - To display the fact on click of the card
-class MythCardWidget extends StatelessWidget {
+/// Supports Mobile Screen Sizes
+class MythCardMobileWidget extends StatelessWidget {
   final String myth, fact;
 
-  const MythCardWidget({
+  const MythCardMobileWidget({
     Key key,
     @required this.myth,
     @required this.fact,
@@ -88,7 +88,7 @@ class MythCardWidget extends StatelessWidget {
                             SizedBoxHeightWidget(screenHeight / 10),
 
                             // Displaying the Fact item
-                            MythFactItemWidget(
+                            MythFactItemMobileWidget(
                               screenWidth: screenWidth,
                               screenHeight: screenHeight,
                               shadowColor: AppColors.factColor,
@@ -105,7 +105,7 @@ class MythCardWidget extends StatelessWidget {
           },
 
           // Adding the Myth Item with a spacing b/w each item using [SizedBoxHeightWidget]
-          child: MythFactItemWidget(
+          child: MythFactItemMobileWidget(
             screenWidth: screenWidth,
             screenHeight: screenHeight,
             shadowColor: AppColors.mythColor,

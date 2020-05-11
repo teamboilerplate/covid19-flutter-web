@@ -9,10 +9,11 @@ import 'package:flutter/material.dart';
 /// 1. [title] - title of the Symptom
 /// 2. [description] - Description about the symptom
 /// 3. [imageURL] - URL for the image specific to the symptom
-class SymptomCardWidget extends StatelessWidget {
+/// Supports Mobile Screen Sizes
+class SymptomCardMobileWidget extends StatelessWidget {
   final String title, description, imageURL;
 
-  const SymptomCardWidget({
+  const SymptomCardMobileWidget({
     Key key,
     @required this.title,
     @required this.description,

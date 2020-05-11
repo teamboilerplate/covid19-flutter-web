@@ -15,20 +15,21 @@ import 'package:covid19/widgets/sized_box_width_widget.dart';
 /// **Requires**
 /// 1. [countryStatisticsConfirmedList] - List of Confirmed Cases since case 0 for the selected country
 /// 2. [countryStatisticsRecoveredList] - List of Recovered Cases since case 0 for the selected country
-class InfoGraphWidget extends StatefulWidget {
+/// Supports Desktop Screen Sizes
+class InfoGraphDesktopWidget extends StatefulWidget {
   final List<CountryStatistics> countryStatisticsConfirmedList;
   final List<CountryStatistics> countryStatisticsRecoveredList;
 
-  const InfoGraphWidget({
+  const InfoGraphDesktopWidget({
     Key key,
     @required this.countryStatisticsConfirmedList,
     @required this.countryStatisticsRecoveredList,
   }) : super(key: key);
   @override
-  _InfoGraphWidgetState createState() => _InfoGraphWidgetState();
+  _InfoGraphDesktopWidgetState createState() => _InfoGraphDesktopWidgetState();
 }
 
-class _InfoGraphWidgetState extends State<InfoGraphWidget> {
+class _InfoGraphDesktopWidgetState extends State<InfoGraphDesktopWidget> {
   bool dailySelected = true,
       weeklyselected = false,
       dailyChangeSelected = false;
@@ -125,7 +126,7 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
             : Text(
                 Strings.emptyData,
                 style: TextStyles.errorHeadingTextStlye.copyWith(
-                  fontSize: screenWidth / 25,
+                  fontSize: screenHeight / 35,
                 ),
               ),
       ),
@@ -149,16 +150,10 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
                 screenWidth: screenWidth,
                 screenHeight: screenHeight,
               )
-            : Padding(
-                padding: const EdgeInsets.only(
-                  top: Dimens.verticalPadding / 0.75,
-                  right: Dimens.verticalPadding / 50,
-                ),
-                child: Text(
-                  Strings.emptyData,
-                  style: TextStyles.errorHeadingTextStlye.copyWith(
-                    fontSize: screenWidth / 25,
-                  ),
+            : Text(
+                Strings.emptyData,
+                style: TextStyles.errorHeadingTextStlye.copyWith(
+                  fontSize: screenHeight / 35,
                 ),
               ),
       ),
@@ -189,7 +184,7 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
             : Text(
                 Strings.emptyData,
                 style: TextStyles.errorHeadingTextStlye.copyWith(
-                  fontSize: screenWidth / 25,
+                  fontSize: screenHeight / 35,
                 ),
               ),
       ),
@@ -243,17 +238,17 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
                     Strings.dailyStatiscsLable,
                     style: dailySelected
                         ? TextStyles.hightlightText.copyWith(
-                            fontSize: screenWidth / 20,
+                            fontSize: screenHeight / 35,
                           )
                         : TextStyles.titleTextStyle.copyWith(
-                            fontSize: screenWidth / 20,
+                            fontSize: screenHeight / 35,
                           ),
                   ),
                 ),
               ),
 
               // Horizontal Spacing
-              SizedBoxWidthWidget(screenWidth / 20),
+              SizedBoxWidthWidget(screenWidth / 100),
 
               // Tab 2
               // Gesture Detector used to avoid the Ripple Effect caused in InkWell
@@ -282,17 +277,17 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
                     Strings.weeklyStatiscsLable,
                     style: weeklyselected
                         ? TextStyles.hightlightText.copyWith(
-                            fontSize: screenWidth / 20,
+                            fontSize: screenHeight / 35,
                           )
                         : TextStyles.titleTextStyle.copyWith(
-                            fontSize: screenWidth / 20,
+                            fontSize: screenHeight / 35,
                           ),
                   ),
                 ),
               ),
 
               // Horizontal Spacing
-              SizedBoxWidthWidget(screenWidth / 20),
+              SizedBoxWidthWidget(screenWidth / 100),
 
               // Tab 3
               // Gesture Detector used to avoid the Ripple Effect caused in InkWell
@@ -321,10 +316,10 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
                     Strings.dailyGrowthStatiscsLable,
                     style: dailyChangeSelected
                         ? TextStyles.hightlightText.copyWith(
-                            fontSize: screenWidth / 20,
+                            fontSize: screenHeight / 35,
                           )
                         : TextStyles.titleTextStyle.copyWith(
-                            fontSize: screenWidth / 20,
+                            fontSize: screenHeight / 35,
                           ),
                   ),
                 ),
@@ -336,7 +331,7 @@ class _InfoGraphWidgetState extends State<InfoGraphWidget> {
         // Non-Scrollable PageView builder used to display the Statistics Charts
         Container(
           width: screenWidth,
-          height: screenHeight / 3.5,
+          height: screenHeight / 2,
           padding: const EdgeInsets.only(
             right: Dimens.horizontalPadding,
           ),
@@ -395,7 +390,7 @@ class DailyBarChartData extends StatelessWidget {
             .toDouble() +
         countryStatisticsConfirmedList[countryStatisticsConfirmedListLength - 2]
                 .cases /
-            7.5;
+            10;
 
     // Looping through the list to add each individual item with the normalized values
     // to the [BarChartGroupData] which is used to plot the points on the graph
@@ -413,7 +408,7 @@ class DailyBarChartData extends StatelessWidget {
                   newMin: 4,
                 ),
                 color: AppColors.confirmedColor,
-                width: screenWidth / 20,
+                width: screenWidth / 50,
                 backDrawRodData: BackgroundBarChartRodData(
                   show: true,
                   // Setting the max value of the Bar Chart (Y Axis) with a buffer
@@ -430,7 +425,7 @@ class DailyBarChartData extends StatelessWidget {
     );
     return BarChart(
       BarChartData(
-        groupsSpace: screenWidth / 14,
+        groupsSpace: screenWidth / 37,
         alignment: BarChartAlignment.center,
 
         // Define the properties for the Bar Chart when touched over a plot
@@ -500,7 +495,7 @@ class DailyBarChartData extends StatelessWidget {
               return BarTooltipItem(
                 '$weekDay \n ${countryStatisticsConfirmedList[group.x].cases}',
                 TextStyles.statisticsToopTipTextStyle.copyWith(
-                  fontSize: screenWidth / 30,
+                  fontSize: screenWidth / 85,
                 ),
               );
             },
@@ -514,10 +509,10 @@ class DailyBarChartData extends StatelessWidget {
           leftTitles: SideTitles(
             showTitles: true,
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
-              fontSize: screenWidth / 33,
+              fontSize: screenWidth / 85,
             ),
-            margin: screenWidth / 35,
-            reservedSize: screenWidth / 15,
+            margin: screenWidth / 125,
+            reservedSize: screenWidth / 20,
             getTitles: (value) {
               if (value == 3) {
                 return '${getUnitValue(countryStatisticsConfirmedList[0].cases.toDouble())}';
@@ -535,7 +530,7 @@ class DailyBarChartData extends StatelessWidget {
           bottomTitles: SideTitles(
             showTitles: true,
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
-              fontSize: screenWidth / 30,
+              fontSize: screenWidth / 85,
             ),
             reservedSize: screenWidth / 20,
             margin: screenHeight / 175,
@@ -677,10 +672,10 @@ class WeeklyAreaGraphData extends StatelessWidget {
           leftTitles: SideTitles(
             showTitles: true,
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
-              fontSize: screenWidth / 33,
+              fontSize: screenWidth / 85,
             ),
-            margin: screenWidth / 35,
-            reservedSize: screenWidth / 15,
+            margin: screenWidth / 125,
+            reservedSize: screenWidth / 20,
 
             // Setting the cases values using the [getUnitValue] method across the graph
             getTitles: (value) {
@@ -702,11 +697,11 @@ class WeeklyAreaGraphData extends StatelessWidget {
           // Bottom Titles
           bottomTitles: SideTitles(
             showTitles: true,
+            textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
+              fontSize: screenWidth / 85,
+            ),
             reservedSize: screenWidth / 20,
             margin: screenHeight / 175,
-            textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
-              fontSize: screenWidth / 30,
-            ),
 
             // Setting the date values using the [dailyMonthData] method across the graph
             getTitles: (value) {
@@ -748,7 +743,7 @@ class WeeklyAreaGraphData extends StatelessWidget {
                     color: AppColors.confirmedColor.withOpacity(0.5),
                   ),
                   FlDotData(
-                    dotSize: screenWidth / 50,
+                    dotSize: screenWidth / 125,
                     dotColor: AppColors.confirmedColor,
                   ),
                 );
@@ -763,7 +758,7 @@ class WeeklyAreaGraphData extends StatelessWidget {
             fitInsideHorizontally: true,
             fitInsideVertically: true,
             tooltipBgColor: Colors.blueAccent,
-            tooltipRoundedRadius: screenWidth / 50,
+            // tooltipRoundedRadius: screenWidth / 50,
             getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
               // Iterating through [touchBarSpots] to create the [LineToolTipItem] to display
               // date, case count and `Confirmed` static String
@@ -772,7 +767,7 @@ class WeeklyAreaGraphData extends StatelessWidget {
                 return LineTooltipItem(
                   '${dailyMonthData(date: countryStatisticsConfirmedList[flSpot.x.toInt()].date)}\n${countryStatisticsConfirmedList[flSpot.x.toInt()].cases}\nConfirmed',
                   TextStyles.statisticsToopTipTextStyle.copyWith(
-                    fontSize: screenWidth / 30,
+                    fontSize: screenWidth / 85,
                   ),
                 );
               }).toList();
@@ -789,12 +784,12 @@ class WeeklyAreaGraphData extends StatelessWidget {
             colors: gradientColors,
             gradientFrom: const Offset(0, 0),
             gradientTo: const Offset(-1, -1),
-            barWidth: screenWidth / 150,
+            barWidth: screenWidth / 250,
             isStrokeCapRound: true,
             dotData: FlDotData(
               show: true,
               dotColor: AppColors.confirmedColor,
-              dotSize: screenWidth / 75,
+              dotSize: screenWidth / 150,
             ),
             belowBarData: BarAreaData(
               show: true,
@@ -830,7 +825,7 @@ class DailyChangeBarChartData extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final double width = screenWidth / 65;
+    final double width = screenWidth / 100;
 
     /// Method to group the 2 [BarChartRodData] with the given values
     BarChartGroupData makeGroupData({
@@ -839,7 +834,7 @@ class DailyChangeBarChartData extends StatelessWidget {
       double y2,
     }) {
       return BarChartGroupData(
-        barsSpace: screenWidth / 45,
+        barsSpace: screenWidth / 150,
         x: x,
         barRods: [
           BarChartRodData(
@@ -918,7 +913,7 @@ class DailyChangeBarChartData extends StatelessWidget {
         // Setting the max value of the Bar Chart (Y Axis) with a buffer
         // so that the graph is not painted outside the container
         maxY: 12,
-        groupsSpace: screenWidth / 16,
+        groupsSpace: screenWidth / 50,
         alignment: BarChartAlignment.center,
 
         // Define the properties for the Bar Chart when touched over a plot
@@ -990,7 +985,7 @@ class DailyChangeBarChartData extends StatelessWidget {
                 return BarTooltipItem(
                   '$weekDay \n ${confirmedList[group.x]} \n Confirmed',
                   TextStyles.statisticsToopTipTextStyle.copyWith(
-                    fontSize: screenWidth / 30,
+                    fontSize: screenWidth / 85,
                   ),
                 );
               }
@@ -1000,7 +995,7 @@ class DailyChangeBarChartData extends StatelessWidget {
                 return BarTooltipItem(
                   '$weekDay \n ${recoveredList[group.x]} \n Recovered',
                   TextStyles.statisticsToopTipTextStyle.copyWith(
-                    fontSize: screenWidth / 30,
+                    fontSize: screenWidth / 85,
                   ),
                 );
               }
@@ -1015,10 +1010,10 @@ class DailyChangeBarChartData extends StatelessWidget {
           leftTitles: SideTitles(
             showTitles: true,
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
-              fontSize: screenWidth / 33,
+              fontSize: screenWidth / 85,
             ),
-            margin: screenWidth / 22,
-            reservedSize: screenWidth / 15,
+            margin: screenWidth / 125,
+            reservedSize: screenWidth / 20,
             getTitles: (value) {
               if (value == 2) {
                 return '${getUnitValue(math.min(confirmedList[0].toDouble(), recoveredList[0].toDouble()))}';
@@ -1034,7 +1029,7 @@ class DailyChangeBarChartData extends StatelessWidget {
           bottomTitles: SideTitles(
             showTitles: true,
             textStyle: TextStyles.statisticsLabelTextStyle.copyWith(
-              fontSize: screenWidth / 30,
+              fontSize: screenWidth / 85,
             ),
             reservedSize: screenWidth / 20,
             margin: screenHeight / 175,

@@ -1,5 +1,5 @@
 name: covid19
-description: A new Flutter project.
+description: An application with all sorts of data about COVID-19 and helpful information for users.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -11,7 +11,7 @@ description: A new Flutter project.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -28,6 +28,12 @@ dependencies:
   fl_chart: ^0.8.7
   # Package to leverage Firebase Analytics
   firebase: ^7.3.0
+  # Package to check responsiveness
+  # device_preview: ^0.4.4
+  # Package to support responsiveness
+  responsive_builder: ^0.1.7
+  # Package to launch OS specific URLs
+  url_launcher: ^5.4.2
 
 dev_dependencies:
   flutter_test:
@@ -53,13 +59,7 @@ flutter:
     - assets/images/
 
   fonts:
-    # Default font to be used all over the application
-    - family: QuickSand
-      fonts:
-        - asset: assets/fonts/Quicksand-Medium.woff
-          weight: 500
-        - asset: assets/fonts/Quicksand-Bold.woff
-          weight: 700
+    # Custom Icon Font
     - family: Covid19Icons
       fonts:
         - asset: assets/fonts/Covid19Icons.ttf

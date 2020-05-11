@@ -38,10 +38,10 @@ List<SymptomsModel> symptomsData = [
     imageURL: 'https://boilerplate.in/covid19/fatigue.png',
   ),
   SymptomsModel(
-    title: 'Tierdness',
+    title: 'Headache',
     description:
-        'You might find yourself feeling dehydrated. Muscle soreness has also been noted in some cases.',
-    imageURL: 'https://boilerplate.in/covid19/tierdness.png',
+        'In rare cases, sharp headaches that persist for a short duration has been noted. These headaches are similar to migraine headaches.',
+    imageURL: 'https://boilerplate.in/covid19/headache.png',
   ),
   SymptomsModel(
     title: 'Difficulty Breathing',
@@ -50,9 +50,9 @@ List<SymptomsModel> symptomsData = [
     imageURL: 'https://boilerplate.in/covid19/difficulty-breathing.png',
   ),
   SymptomsModel(
-    title: 'Headache',
+    title: 'Tierdness',
     description:
-        'In rare cases, sharp headaches that persist for a short duration has been noted. These headaches are similar to migraine headaches.',
-    imageURL: 'https://boilerplate.in/covid19/headache.png',
+        'You might find yourself feeling dehydrated. Muscle soreness has also been noted in some cases.',
+    imageURL: 'https://boilerplate.in/covid19/tierdness.png',
   ),
 ];

@@ -14,10 +14,11 @@ import 'package:covid19/widgets/sized_box_width_widget.dart';
 /// is loading
 /// **Requires**
 /// 1. [today] - to display the current date of the user in EEEE, d MMMM y format
-class HomeLoadingWidget extends StatelessWidget {
+/// Supports Mobile Screen Sizes
+class StatisticsMobileLoadingWidget extends StatelessWidget {
   final DateTime today;
 
-  const HomeLoadingWidget({
+  const StatisticsMobileLoadingWidget({
     Key key,
     @required this.today,
   }) : super(key: key);
@@ -30,7 +31,7 @@ class HomeLoadingWidget extends StatelessWidget {
       child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(
-            Dimens.horizontalPadding,
+            Dimens.horizontalPadding / 2.5,
             Dimens.verticalPadding / 0.75,
             0,
             0,
@@ -135,7 +136,7 @@ class HomeLoadingWidget extends StatelessWidget {
               // Information Cards
               Padding(
                 padding: const EdgeInsets.only(
-                  right: Dimens.horizontalPadding,
+                  right: Dimens.horizontalPadding / 2.5,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -143,9 +144,6 @@ class HomeLoadingWidget extends StatelessWidget {
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: Dimens.horizontalPadding / 2,
-                        ),
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
@@ -162,12 +160,13 @@ class HomeLoadingWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // Horizontal Spacing
+                    SizedBoxWidthWidget(screenWidth / 100),
+
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: Dimens.horizontalPadding / 2,
-                        ),
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
@@ -184,12 +183,36 @@ class HomeLoadingWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // Horizontal Spacing
+                    SizedBoxWidthWidget(screenWidth / 100),
+
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: Dimens.horizontalPadding / 2,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5),
+                          ),
                         ),
+                        child: Container(
+                          height: screenHeight / 6.1,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
+                            color: AppColors.offBlackColor,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    // Horizontal Spacing
+                    SizedBoxWidthWidget(screenWidth / 100),
+
+                    Expanded(
+                      flex: 1,
+                      child: Container(
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
@@ -303,7 +326,7 @@ class HomeLoadingWidget extends StatelessWidget {
               // Information Cards
               Padding(
                 padding: const EdgeInsets.only(
-                  right: Dimens.horizontalPadding,
+                  right: Dimens.horizontalPadding / 2.5,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -311,9 +334,6 @@ class HomeLoadingWidget extends StatelessWidget {
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: Dimens.horizontalPadding / 2,
-                        ),
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
@@ -330,12 +350,13 @@ class HomeLoadingWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // Horizontal Spacing
+                    SizedBoxWidthWidget(screenWidth / 100),
+
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: Dimens.horizontalPadding / 2,
-                        ),
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
@@ -352,12 +373,36 @@ class HomeLoadingWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // Horizontal Spacing
+                    SizedBoxWidthWidget(screenWidth / 100),
+
                     Expanded(
                       flex: 1,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: Dimens.horizontalPadding / 2,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5),
+                          ),
                         ),
+                        child: Container(
+                          height: screenHeight / 6.1,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
+                            color: AppColors.offBlackColor,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    // Horizontal Spacing
+                    SizedBoxWidthWidget(screenWidth / 100),
+
+                    Expanded(
+                      flex: 1,
+                      child: Container(
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
