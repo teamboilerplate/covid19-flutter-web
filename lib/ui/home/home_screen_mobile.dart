@@ -56,7 +56,7 @@ class HomeMobileScreen extends StatelessWidget {
                       Text(
                         Strings.appSlogan,
                         style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                          fontSize: screenWidth / 12,
+                          fontSize: screenHeight / 30,
                         ),
                       ),
 
@@ -74,7 +74,7 @@ class HomeMobileScreen extends StatelessWidget {
                                     text:
                                         '${Strings.projectOpenSourceHeading}\n\n',
                                     style: TextStyles.hightlightText.copyWith(
-                                      fontSize: screenWidth / 20,
+                                      fontSize: screenHeight / 50,
                                     ),
                                   ),
 
@@ -84,7 +84,7 @@ class HomeMobileScreen extends StatelessWidget {
                                     style: TextStyles
                                         .statisticsSubHeadingTextStlye
                                         .copyWith(
-                                      fontSize: screenWidth / 25,
+                                      fontSize: screenHeight / 60,
                                     ),
                                     children: <InlineSpan>[
                                       const TextSpan(
@@ -129,7 +129,7 @@ class HomeMobileScreen extends StatelessWidget {
                                         ),
                                       ],
                                       borderRadius: BorderRadius.all(
-                                        Radius.circular(screenWidth / 25),
+                                        Radius.circular(screenHeight / 75),
                                       ),
                                       color: AppColors.accentBlueColor,
                                     ),
@@ -138,7 +138,7 @@ class HomeMobileScreen extends StatelessWidget {
                                       style: TextStyles
                                           .statisticsHeadingTextStlye
                                           .copyWith(
-                                        fontSize: screenWidth / 25,
+                                        fontSize: screenHeight / 65,
                                       ),
                                     ),
                                   ),
@@ -149,7 +149,7 @@ class HomeMobileScreen extends StatelessWidget {
                         ),
                         child: Icon(
                           Covid19Icons.error,
-                          size: screenWidth / 12,
+                          size: screenHeight / 25,
                           color: AppColors.blackColor,
                         ),
                       ),
@@ -169,7 +169,7 @@ class HomeMobileScreen extends StatelessWidget {
                             ImageChunkEvent loadingProgress) {
                           if (loadingProgress == null) return child;
                           return Container(
-                            height: screenHeight / 3.5,
+                            height: screenHeight / 3,
                             decoration: BoxDecoration(
                               color: AppColors.offBlackColor.withOpacity(0.5),
                               borderRadius: const BorderRadius.all(

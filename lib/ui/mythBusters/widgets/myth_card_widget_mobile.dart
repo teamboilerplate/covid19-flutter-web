@@ -61,8 +61,8 @@ class MythCardMobileWidget extends StatelessWidget {
                           children: <Widget>[
                             // Fact Icon
                             Container(
-                              width: screenWidth / 8,
-                              height: screenWidth / 8,
+                              width: screenHeight / 20,
+                              height: screenHeight / 20,
                               decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -79,7 +79,7 @@ class MythCardMobileWidget extends StatelessWidget {
                               child: Center(
                                 child: Image.asset(
                                   AssetImages.fact,
-                                  height: screenWidth / 8,
+                                  height: screenHeight / 35,
                                 ),
                               ),
                             ),
@@ -114,7 +114,7 @@ class MythCardMobileWidget extends StatelessWidget {
         ),
 
         // Vertical Spacing
-        SizedBoxHeightWidget(screenHeight / 75),
+        SizedBoxHeightWidget(screenHeight / 150),
       ],
     );
   }

@@ -15,7 +15,6 @@ import 'package:covid19/widgets/sized_box_height_widget.dart';
 class SymptomsMobileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final screenWidth = DeviceUtils.getScaledWidth(context, 1);
     final screenHeight = DeviceUtils.getScaledHeight(context, 1);
     return Scaffold(
       // [AppBar] with 0 size used to set the statusbar background color and
@@ -53,7 +52,7 @@ class SymptomsMobileScreen extends StatelessWidget {
                       onTap: () => Navigator.of(context).pop(),
                       child: Icon(
                         Covid19Icons.keyboardArrowLeft,
-                        size: screenWidth / 18,
+                        size: screenHeight / 45,
                         color: AppColors.blackColor,
                       ),
                     ),
@@ -65,7 +64,7 @@ class SymptomsMobileScreen extends StatelessWidget {
                     Text(
                       Strings.symptomsTitle,
                       style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                        fontSize: screenWidth / 15,
+                        fontSize: screenHeight / 35,
                       ),
                     ),
 
@@ -80,7 +79,7 @@ class SymptomsMobileScreen extends StatelessWidget {
               // in the screen is filled (Removing this causes the overflow error to occur as
               // a column does not allow scrolling inherently)
               Expanded(
-                flex: 5,
+                flex: 6,
                 // Defining a [SingleChildScrollView] to scroll only the Symptom Items and not the header
                 child: ScrollConfiguration(
                   behavior: const CustomScrollBehaviour(),
@@ -92,7 +91,7 @@ class SymptomsMobileScreen extends StatelessWidget {
                       if (index == symptomsData.length - 1) {
                         return Padding(
                           padding: const EdgeInsets.only(
-                            bottom: Dimens.verticalPadding / 0.2,
+                            bottom: Dimens.verticalPadding,
                           ),
                           child: SymptomCardMobileWidget(
                             title: symptomsData[index].title,

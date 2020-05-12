@@ -58,7 +58,7 @@ class SymptomCardMobileWidget extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                    fontSize: screenWidth / 20,
+                    fontSize: screenHeight / 45,
                   ),
                 ),
 
@@ -68,7 +68,7 @@ class SymptomCardMobileWidget extends StatelessWidget {
                 Text(
                   description,
                   style: TextStyles.statisticsSubHeadingTextStlye.copyWith(
-                    fontSize: screenWidth / 25,
+                    fontSize: screenHeight / 55,
                   ),
                 ),
               ],
@@ -83,14 +83,14 @@ class SymptomCardMobileWidget extends StatelessWidget {
             ),
             child: Image.network(
               imageURL,
-              height: screenHeight / 8.5,
+              height: screenHeight / 10,
               fit: BoxFit.cover,
               loadingBuilder: (BuildContext context, Widget child,
                   ImageChunkEvent loadingProgress) {
                 if (loadingProgress == null) return child;
                 return Container(
-                  width: screenHeight / 8.5,
-                  height: screenHeight / 8.5,
+                  width: screenHeight / 10,
+                  height: screenHeight / 10,
                   decoration: BoxDecoration(
                     color: AppColors.offBlackColor.withOpacity(0.5),
                     borderRadius: const BorderRadius.all(

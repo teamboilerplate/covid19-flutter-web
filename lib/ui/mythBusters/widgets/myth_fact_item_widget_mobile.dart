@@ -68,7 +68,7 @@ class MythFactItemMobileWidget extends StatelessWidget {
             child: Text(
               text,
               style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                fontSize: screenWidth / 20,
+                fontSize: screenHeight / 50,
               ),
             ),
           ),

@@ -55,7 +55,7 @@ class InformationMobileScreen extends StatelessWidget {
                           TextSpan(
                             text: '${Strings.dataSource}\n\n',
                             style: TextStyles.hightlightText.copyWith(
-                              fontSize: screenWidth / 20,
+                              fontSize: screenHeight / 50,
                             ),
                           ),
 
@@ -64,7 +64,7 @@ class InformationMobileScreen extends StatelessWidget {
                           TextSpan(
                             style: TextStyles.statisticsSubHeadingTextStlye
                                 .copyWith(
-                              fontSize: screenWidth / 25,
+                              fontSize: screenHeight / 60,
                             ),
                             children: <InlineSpan>[
                               const TextSpan(
@@ -134,7 +134,7 @@ class InformationMobileScreen extends StatelessWidget {
                               'Close',
                               style: TextStyles.statisticsHeadingTextStlye
                                   .copyWith(
-                                fontSize: screenWidth / 25,
+                                fontSize: screenHeight / 65,
                               ),
                             ),
                           ),
@@ -145,17 +145,10 @@ class InformationMobileScreen extends StatelessWidget {
                 ),
 
                 // Adding the information Icon to the [AppBar]
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(screenWidth / 15),
-                    ),
-                  ),
-                  child: Icon(
-                    Covid19Icons.error,
-                    size: screenWidth / 12,
-                    color: AppColors.blackColor,
-                  ),
+                child: Icon(
+                  Covid19Icons.error,
+                  size: screenHeight / 25,
+                  color: AppColors.blackColor,
                 ),
               ),
             ),
@@ -220,7 +213,7 @@ class InformationMobileScreen extends StatelessWidget {
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           icon: Icon(
             Covid19Icons.keyboardArrowLeft,
-            size: screenWidth / 25,
+            size: screenHeight / 45,
             color: AppColors.offBlackColor,
           ),
           label: const Text(

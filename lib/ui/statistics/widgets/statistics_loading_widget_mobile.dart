@@ -42,7 +42,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
               // Back Icon
               Icon(
                 Covid19Icons.keyboardArrowLeft,
-                size: screenWidth / 18,
+                size: screenHeight / 45,
                 color: AppColors.blackColor,
               ),
 
@@ -52,7 +52,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
               Text(
                 Strings.outbreakTitle,
                 style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                  fontSize: screenWidth / 23,
+                  fontSize: screenHeight / 45,
                 ),
               ),
 
@@ -60,7 +60,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
               Text(
                 todayDateFormatter(today),
                 style: TextStyles.statisticsSubHeadingTextStlye.copyWith(
-                  fontSize: screenWidth / 26.1,
+                  fontSize: screenHeight / 60,
                 ),
               ),
 
@@ -79,13 +79,13 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                       Strings.globalTitle,
                       softWrap: true,
                       style: TextStyles.hightlightText.copyWith(
-                        fontSize: screenWidth / 10,
+                        fontSize: screenHeight / 30,
                       ),
                     ),
                   ),
                   Icon(
                     Covid19Icons.globe,
-                    size: screenWidth / 12,
+                    size: screenHeight / 35,
                     color: AppColors.blackColor,
                   ),
                 ],
@@ -103,32 +103,31 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                   color: AppColors.offBlackColor,
                 ),
                 width: screenWidth / 1.2,
-                height: screenHeight / 47,
+                height: screenHeight / 65,
               ),
 
               // Vertical Spacing
               SizedBoxHeightWidget(screenHeight / 50),
 
               // Details Button
-              // TODO :- Uncomment when Global details are added
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.end,
-              //   children: <Widget>[
-              //     Padding(
-              //       padding: const EdgeInsets.only(
-              //         right: Dimens.horizontalPadding / 0.75,
-              //       ),
-              //       child: Text(
-              //         Strings.details,
-              //         maxLines: 2,
-              //         softWrap: true,
-              //         style: TextStyles.statisticsAccentTextStyle.copyWith(
-              //           fontSize: screenWidth / 22,
-              //         ),
-              //       ),
-              //     ),
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      right: Dimens.horizontalPadding / 0.75,
+                    ),
+                    child: Text(
+                      Strings.details,
+                      maxLines: 2,
+                      softWrap: true,
+                      style: TextStyles.statisticsAccentTextStyle.copyWith(
+                        fontSize: screenHeight / 50,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
 
               // Vertical Spacing
               SizedBoxHeightWidget(screenHeight / 75),
@@ -150,7 +149,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -173,7 +172,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -196,7 +195,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -219,7 +218,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -268,7 +267,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           color: AppColors.offBlackColor,
                         ),
                         width: screenWidth / 2,
-                        height: screenHeight / 47,
+                        height: screenHeight / 35,
                       ),
                     ),
                   ),
@@ -282,14 +281,14 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                         color: AppColors.offBlackColor,
                       ),
                       width: screenWidth / 1.2,
-                      height: screenHeight / 47,
+                      height: screenHeight / 35,
                     ),
                   ),
                   Flexible(
                     flex: 1,
                     child: Icon(
                       Covid19Icons.arrowDropDown,
-                      size: screenWidth / 12,
+                      size: screenHeight / 30,
                       color: AppColors.offBlackColor,
                     ),
                   ),
@@ -340,7 +339,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -363,7 +362,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -386,7 +385,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -409,7 +408,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                           ),
                         ),
                         child: Container(
-                          height: screenHeight / 6.1,
+                          height: screenHeight / 6,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(5),
@@ -435,7 +434,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                     maxLines: 2,
                     softWrap: true,
                     style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                      fontSize: screenWidth / 18,
+                      fontSize: screenHeight / 35,
                     ),
                   ),
                 ],
@@ -462,13 +461,13 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                     child: Text(
                       Strings.dailyStatiscsLable,
                       style: TextStyles.hightlightText.copyWith(
-                        fontSize: screenWidth / 20,
+                        fontSize: screenHeight / 45,
                       ),
                     ),
                   ),
 
                   // Horizontal Spacing
-                  SizedBoxWidthWidget(screenWidth / 20),
+                  SizedBoxWidthWidget(screenWidth / 45),
 
                   // Tab 2
                   Container(
@@ -477,13 +476,13 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                     child: Text(
                       Strings.weeklyStatiscsLable,
                       style: TextStyles.titleTextStyle.copyWith(
-                        fontSize: screenWidth / 20,
+                        fontSize: screenHeight / 45,
                       ),
                     ),
                   ),
 
                   // Horizontal Spacing
-                  SizedBoxWidthWidget(screenWidth / 20),
+                  SizedBoxWidthWidget(screenWidth / 45),
 
                   // Tab 3
                   Container(
@@ -492,7 +491,7 @@ class StatisticsMobileLoadingWidget extends StatelessWidget {
                     child: Text(
                       Strings.dailyGrowthStatiscsLable,
                       style: TextStyles.titleTextStyle.copyWith(
-                        fontSize: screenWidth / 20,
+                        fontSize: screenHeight / 45,
                       ),
                     ),
                   ),

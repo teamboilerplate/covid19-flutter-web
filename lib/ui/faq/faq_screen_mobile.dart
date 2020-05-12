@@ -147,7 +147,6 @@ class _FAQMobileScreenState extends State<FAQMobileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = DeviceUtils.getScaledWidth(context, 1);
     final screenHeight = DeviceUtils.getScaledHeight(context, 1);
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
@@ -184,7 +183,7 @@ class _FAQMobileScreenState extends State<FAQMobileScreen> {
                       onTap: () => Navigator.of(context).pop(),
                       child: Icon(
                         Covid19Icons.keyboardArrowLeft,
-                        size: screenWidth / 18,
+                        size: screenHeight / 45,
                         color: AppColors.blackColor,
                       ),
                     ),
@@ -196,7 +195,7 @@ class _FAQMobileScreenState extends State<FAQMobileScreen> {
                     Text(
                       Strings.faqTitle,
                       style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                        fontSize: screenWidth / 15,
+                        fontSize: screenHeight / 35,
                       ),
                     ),
                   ],
@@ -208,7 +207,7 @@ class _FAQMobileScreenState extends State<FAQMobileScreen> {
               // in the screen is filled (Removing this causes the overflow error to occur as
               // a column does not allow scrolling inherently)
               Expanded(
-                flex: 5,
+                flex: 8,
                 // Defining a [SingleChildScrollView] to scroll only the Symptom Items and not the header
                 child: ScrollConfiguration(
                   behavior: const CustomScrollBehaviour(),
@@ -262,21 +261,24 @@ class _FAQItemState extends State<FAQItem> {
       title: Text(
         widget.entry.title,
         style: TextStyles.faqHeadingTextStyle.copyWith(
-          fontSize: DeviceUtils.getScaledWidth(
+          fontSize: DeviceUtils.getScaledHeight(
             context,
-            0.045,
+            0.02,
           ),
         ),
       ),
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 20,
+          ),
           child: Text(
             widget.entry.description,
             style: TextStyles.faqBodyTextStyle.copyWith(
-              fontSize: DeviceUtils.getScaledWidth(
+              fontSize: DeviceUtils.getScaledHeight(
                 context,
-                0.045,
+                0.017,
               ),
             ),
           ),

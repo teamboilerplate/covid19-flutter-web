@@ -136,8 +136,8 @@ NavigationRailDestination navigationRaiilItem(
         if (loadingProgress == null) return child;
         return Container(
           height: 36,
-          decoration: const BoxDecoration(
-            color: AppColors.homeCardLoadingColor,
+          decoration: BoxDecoration(
+            color: AppColors.primaryColor.withOpacity(0.1),
             shape: BoxShape.circle,
           ),
         );

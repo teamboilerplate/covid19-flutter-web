@@ -1,6 +1,6 @@
-import 'package:covid19/utils/device/device_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:covid19/utils/device/device_utils.dart';
 
 class MyAlertDialog<T> extends StatelessWidget {
   /// Creates an alert dialog.

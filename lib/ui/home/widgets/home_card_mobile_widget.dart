@@ -30,7 +30,6 @@ class HomeCardWidget extends StatelessWidget {
         );
   @override
   Widget build(BuildContext context) {
-    final screenWidth = DeviceUtils.getScaledWidth(context, 1);
     final screenHeight = DeviceUtils.getScaledHeight(context, 1);
     return GestureDetector(
       onTap: () => Navigator.of(context).pushNamed(route),
@@ -83,7 +82,7 @@ class HomeCardWidget extends StatelessWidget {
               title,
               textAlign: TextAlign.center,
               style: TextStyles.homeCardTitle.copyWith(
-                fontSize: screenWidth / 25,
+                fontSize: screenHeight / 60,
               ),
             ),
           ],

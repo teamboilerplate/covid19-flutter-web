@@ -58,7 +58,7 @@ class InfoCardMobileWidget extends StatelessWidget {
               infoLabel.toUpperCase(),
               textAlign: TextAlign.center,
               style: TextStyles.infoLabelTextStyle.copyWith(
-                fontSize: screenWidth / 40,
+                fontSize: screenHeight / 85,
               ),
             ),
 
@@ -82,7 +82,7 @@ class InfoCardMobileWidget extends StatelessWidget {
                     ? '+ ${rowNumberFormat(infoValueNew)}'
                     : '- ${rowNumberFormat(infoValueNew)}',
                 style: TextStyles.infoCountTextStyle.copyWith(
-                  fontSize: screenWidth / 30,
+                  fontSize: screenHeight / 70,
                   color: infoColor,
                 ),
               ),
@@ -95,11 +95,7 @@ class InfoCardMobileWidget extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(
-                    screenWidth / 25,
-                  ),
-                ),
+                shape: BoxShape.circle,
                 color: infoColor.withAlpha(50),
                 border: Border.all(
                   width: 0.5,
@@ -109,7 +105,7 @@ class InfoCardMobileWidget extends StatelessWidget {
               child: Icon(
                 infoIcon,
                 color: infoColor,
-                size: screenWidth / 25,
+                size: screenHeight / 55,
               ),
             ),
 
@@ -121,7 +117,7 @@ class InfoCardMobileWidget extends StatelessWidget {
               '${rowNumberFormat(infoValue)}',
               textAlign: TextAlign.center,
               style: TextStyles.infoCountTextStyle.copyWith(
-                fontSize: screenWidth / 28,
+                fontSize: screenHeight / 60,
                 color: infoColor,
               ),
             ),

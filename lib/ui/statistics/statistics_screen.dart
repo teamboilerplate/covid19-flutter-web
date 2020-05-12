@@ -23,6 +23,7 @@ import 'package:covid19/ui/statistics/widgets/info_card_widget_mobile.dart';
 import 'package:covid19/ui/statistics/widgets/info_graph_widget_mobile.dart';
 import 'package:covid19/ui/statistics/widgets/info_card_widget_desktop.dart';
 import 'package:covid19/ui/statistics/widgets/info_graph_widget_desktop.dart';
+import 'package:covid19/ui/statistics/global_countries_details_screen.dart';
 import 'package:covid19/utils/device/device_utils.dart';
 import 'package:covid19/utils/custom_scroll_behaviour.dart';
 import 'package:covid19/utils/emoji_flags.dart';
@@ -347,7 +348,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                   onTap: () => Navigator.of(context).pop(),
                   child: Icon(
                     Covid19Icons.keyboardArrowLeft,
-                    size: screenWidth / 18,
+                    size: screenHeight / 45,
                     color: AppColors.blackColor,
                   ),
                 ),
@@ -359,7 +360,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 Text(
                   Strings.outbreakTitle,
                   style: TextStyles.statisticsHeadingTextStlye.copyWith(
-                    fontSize: screenWidth / 23,
+                    fontSize: screenHeight / 45,
                   ),
                 ),
 
@@ -367,7 +368,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 Text(
                   todayDateFormatter(today) ?? '',
                   style: TextStyles.statisticsSubHeadingTextStlye.copyWith(
-                    fontSize: screenWidth / 26,
+                    fontSize: screenHeight / 60,
                   ),
                 ),
 
@@ -386,13 +387,13 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                         Strings.globalTitle,
                         softWrap: true,
                         style: TextStyles.hightlightText.copyWith(
-                          fontSize: screenWidth / 10,
+                          fontSize: screenHeight / 30,
                         ),
                       ),
                     ),
                     Icon(
                       Covid19Icons.globe,
-                      size: screenWidth / 12,
+                      size: screenHeight / 35,
                       color: AppColors.blackColor,
                     ),
                   ],
@@ -403,7 +404,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
 
                 // Last Updated On Information
                 Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.start,
+                  crossAxisAlignment: WrapCrossAlignment.center,
                   direction: Axis.horizontal,
 
                   // Last Updated Date & Time
@@ -416,7 +417,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                       maxLines: 2,
                       softWrap: true,
                       style: TextStyles.statisticsSubHeadingTextStlye.copyWith(
-                        fontSize: screenWidth / 30,
+                        fontSize: screenHeight / 70,
                       ),
                     ),
                     GestureDetector(
@@ -426,7 +427,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                       ),
                       child: Icon(
                         Covid19Icons.autorenew,
-                        size: screenWidth / 28,
+                        size: screenHeight / 65,
                         color: AppColors.offBlackColor,
                       ),
                     ),
@@ -436,28 +437,36 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 // Vertical Spacing
                 SizedBoxHeightWidget(screenHeight / 50),
 
-                // Details Button
-                // TODO :- Global Details
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.end,
-                //   children: <Widget>[
-                //     Padding(
-                //       padding: const EdgeInsets.only(
-                //         right: Dimens.horizontalPadding / 0.75,
-                //       ),
-                //       child: Text(
-                //         Strings.details,
-                //         maxLines: 2,
-                //         softWrap: true,
-                //         style: TextStyles
-                //             .statisticsAccentTextStyle
-                //             .copyWith(
-                //           fontSize: screenWidth / 22,
-                //         ),
-                //       ),
-                //     ),
-                //   ],
-                // ),
+                //Details Button
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => GlobalCountriesDetails(
+                            globalCountriesList:
+                                data.statisticsInformationData.countries,
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          right: Dimens.horizontalPadding / 0.75,
+                        ),
+                        child: Text(
+                          Strings.details,
+                          maxLines: 2,
+                          softWrap: true,
+                          style: TextStyles.statisticsAccentTextStyle.copyWith(
+                            fontSize: screenHeight / 50,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
 
                 // Vertical Spacing
                 SizedBoxHeightWidget(screenHeight / 75),
@@ -581,7 +590,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                             selectedCountry ?? '',
                             softWrap: true,
                             style: TextStyles.hightlightText.copyWith(
-                              fontSize: screenWidth / 10,
+                              fontSize: screenHeight / 30,
                             ),
                           ),
                         ),
@@ -595,8 +604,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                       'flag_${selectedCountryISO2.toLowerCase()}')
                                   .char
                               : '',
-                          style: const TextStyle(
-                            fontSize: 30,
+                          style: TextStyle(
+                            fontSize: screenHeight / 35,
                           ),
                         ),
                       ),
@@ -604,7 +613,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                         flex: 1,
                         child: Icon(
                           Covid19Icons.arrowDropDown,
-                          size: screenWidth / 12,
+                          size: screenHeight / 30,
                           color: AppColors.offBlackColor,
                         ),
                       ),
@@ -631,7 +640,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 //         style: TextStyles
                 //             .statisticsAccentTextStyle
                 //             .copyWith(
-                //           fontSize: screenWidth / 22,
+                //           fontSize: screenHeight / 50,
                 //         ),
                 //       ),
                 //     ),
@@ -1170,6 +1179,10 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                                 child: Text(
                                                   globalCountriesList[index]
                                                       .country,
+                                                  style: TextStyle(
+                                                    fontSize: screenHeight / 60,
+                                                  ),
+                                                  textAlign: TextAlign.center,
                                                 ),
                                               ),
 
