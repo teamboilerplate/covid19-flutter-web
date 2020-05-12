@@ -19,12 +19,6 @@
       "src": "material"
     },
     {
-      "uid": "af76421f7827c9b8dbf4330d596be014",
-      "css": "keyboard_arrow_left",
-      "code": 59394,
-      "src": "material"
-    },
-    {
       "uid": "6a12c2b74456ea21cc984e11dec227a1",
       "css": "globe",
       "code": 59395,
@@ -65,6 +59,20 @@
       "css": "arrow_drop_down",
       "code": 59401,
       "src": "material"
+    },
+    {
+      "uid": "76c61742a674f059c214396e9c2a2f34",
+      "css": "keyboard_arrow_left",
+      "code": 59402,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M603.8 851.5L252.3 500 603.8 147.7 495.6 39.5 35.1 500 495.6 960.5 603.8 851.5Z",
+        "width": 632
+      },
+      "search": [
+        "vector"
+      ]
     }
   ]
 }

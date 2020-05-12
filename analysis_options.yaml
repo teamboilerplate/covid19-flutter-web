@@ -22,3 +22,4 @@ analyzer:
     unnecessary_getters_setters: ignore
     invariant_booleans: ignore
     avoid_bool_literals_in_conditional_expressions: ignore
+    avoid_web_libraries_in_flutter: ignore

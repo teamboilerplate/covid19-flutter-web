@@ -1,3 +1,5 @@
+import 'package:covid19/models/application/country_information_model.dart';
+import 'package:covid19/models/application/ip_model.dart';
 import 'package:flutter/material.dart'
     show ChangeNotifier, debugPrint, required;
 import 'package:covid19/constants/strings.dart';
@@ -17,10 +19,12 @@ class StatisticseData {
   final StatisticsResponseModel statisticsInformationData;
   final List<CountryStatistics> countryStatisticsConfirmedList;
   final List<CountryStatistics> countryStatisticsRecoveredList;
+  final CountryInformationModel countryInformation;
   StatisticseData({
     @required this.statisticsInformationData,
     @required this.countryStatisticsConfirmedList,
     @required this.countryStatisticsRecoveredList,
+    @required this.countryInformation,
   });
 }
 
@@ -38,31 +42,56 @@ class StatisticsChangeNotifier with ChangeNotifier {
 
   StatisticsChangeNotifier({@required this.userRepository});
 
-  Future<void> fetchHomeData({@required String iso2}) async {
+  Future<void> fetchHomeData({
+    @required String iso2,
+    @required String countryName,
+  }) async {
     // Setting the state as `StatisticsState.loading` indicating an API request in process
     state = StatisticsState.loading;
-
-    // Signalling the change in state to `StatisticsState.loading`
-    notifyListeners();
 
     // Fetching country summary information and country statistics wrapped
     // Wrapping the Network Requests in a try/catch statement to catch any errors accounted and
     // not accounted for
     try {
-      final StatisticsResponseModel countryInformation =
-          await userRepository.fetchHomeData(iso2: iso2);
+      CountryInformationModel userCountryInformation;
+
+      // Retreiving the user's country based on IP (if a countryISO is not provided)
+      if (iso2 == null || countryName == null) {
+        // Fetching the user's Address
+        final IPModel ipaddress = await userRepository.fetchUserIP();
+
+        // Fetching Information about User's country using the retrieved IP Address
+        userCountryInformation =
+            await userRepository.fetchUserCountryInformation(
+          ipAddress: ipaddress.origin,
+        );
+      } else {
+        userCountryInformation = CountryInformationModel(
+          countryCode: iso2,
+          countryName: countryName,
+        );
+      }
+
+      final StatisticsResponseModel countryInformation = await userRepository
+          .fetchHomeData(iso2: userCountryInformation.countryCode);
 
       final List<CountryStatistics> countryStatisticsConfirmedList =
-          await userRepository.fetchCountryStatisticsConfirmed(iso2: iso2);
+          await userRepository.fetchCountryStatisticsConfirmed(
+              iso2: userCountryInformation.countryCode);
 
       final List<CountryStatistics> countryStatisticsRecoveredList =
-          await userRepository.fetchCountryStatisticsRecovered(iso2: iso2);
+          await userRepository.fetchCountryStatisticsRecovered(
+              iso2: userCountryInformation.countryCode);
 
       data = StatisticseData(
         statisticsInformationData: countryInformation,
         countryStatisticsConfirmedList: countryStatisticsConfirmedList,
         countryStatisticsRecoveredList: countryStatisticsRecoveredList,
+        countryInformation: userCountryInformation,
       );
+
+      // Signalling the change in state to `StatisticsState.loading`
+      notifyListeners();
 
       // Setting the state as `StatisticsState.hasData` indicating an API request has been completed
       state = StatisticsState.hasData;

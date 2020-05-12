@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:covid19/utils/device/device_utils.dart';
 
 class MyAlertDialog<T> extends StatelessWidget {
   /// Creates an alert dialog.
@@ -165,6 +166,7 @@ class MyAlertDialog<T> extends StatelessWidget {
       ),
       elevation: 5,
       child: Container(
+        width: DeviceUtils.getScaledHeight(context, 0.5),
         child: dialogChild,
       ),
     );

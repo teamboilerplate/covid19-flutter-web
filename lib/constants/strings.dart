@@ -37,6 +37,13 @@ class Strings {
 
   static const covidInformationTitle = 'What is Covid-19';
 
+  static const projectOpenSourceHeading = 'Open Source';
+
+  static const projectOpenSourceDetails =
+      'The project is completely open source. You can find the source code on our ';
+
+  static const github = 'Github';
+
   /// ------------------------------------------------------
   /// Strings for Statistics and StatisticsLoadingWidget
   /// used in (ui/statistics) and (ui/statistics/widgets)
@@ -47,11 +54,13 @@ class Strings {
 
   static const details = 'Details';
 
-  static const infectedLabel = 'infected';
+  static const infectedLabel = 'Infected';
 
-  static const recoveredLabel = 'recovered';
+  static const recoveredLabel = 'Recovered';
 
-  static const deathsLabel = 'deaths';
+  static const activeLabel = 'Active';
+
+  static const deathsLabel = 'Deaths';
 
   static const confirmedCasesTitle = 'Confirmed Cases';
 
@@ -76,8 +85,8 @@ class Strings {
       'This test is not endorsed by any medical professional and is only a means to be aware of your symptoms and get timely help';
 
   /// ------------------------------------------------------
-  /// Strings for PreventionScreen
-  /// used in (ui/preventionScreen)
+  /// Strings for PreventionScreen and InformationScreen
+  /// used in (ui/prevention) and (ui/information)
   ///
   static const dataSource = 'Data Source';
 
@@ -89,11 +98,6 @@ class Strings {
   static const writtenBy = ' written By ';
 
   static const authorPrevetnionGraphic = 'Chloe West';
-
-  /// ------------------------------------------------------
-  /// Strings for InformationScreen
-  /// used in (ui/preventionScreen)
-  //
 
   static const authorInformationGraphic = 'Mahnoor Sheikh';
 }

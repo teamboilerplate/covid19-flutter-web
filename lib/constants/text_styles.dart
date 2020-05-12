@@ -22,18 +22,27 @@ class TextStyles {
   /// used in (ui/static/static_error_screen)
   ///
   static const errorHeadingTextStlye = TextStyle(
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     color: AppColors.blackColor,
   );
 
   static const errorDescriptionTextStlye = TextStyle(
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     color: AppColors.blackColor,
   );
 
   static const errorButtonTextStyle = TextStyle(
     fontWeight: FontWeight.w500,
     color: AppColors.whiteColor,
+  );
+
+  /// ------------------------------------------------------
+  /// Font Styles for Home Screen
+  /// used in (ui/home)
+  ///
+  static const homeCardTitle = TextStyle(
+    fontWeight: FontWeight.w700,
+    color: AppColors.mythColor,
   );
 
   /// ------------------------------------------------------
@@ -46,13 +55,13 @@ class TextStyles {
   );
 
   static const statisticsSubHeadingTextStlye = TextStyle(
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     color: AppColors.offBlackColor,
   );
 
   static const statisticsAccentTextStyle = TextStyle(
     fontWeight: FontWeight.w600,
-    color: AppColors.blueColor,
+    color: AppColors.accentColor,
   );
 
   static const infoCountTextStyle = TextStyle(
@@ -72,15 +81,6 @@ class TextStyles {
   static const statisticsToopTipTextStyle = TextStyle(
     fontWeight: FontWeight.w500,
     color: AppColors.whiteColor,
-  );
-
-  /// ------------------------------------------------------
-  /// Font Styles for Home Screen
-  /// used in (ui/home)
-  ///
-  static const homeCardTitle = TextStyle(
-    fontWeight: FontWeight.w700,
-    color: AppColors.blackColor,
   );
 
   /// ------------------------------------------------------

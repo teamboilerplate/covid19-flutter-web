@@ -9,6 +9,8 @@
 .history
 .svn/
 firebase.json
+robots.txt
+sitemap.xml
 
 # IntelliJ related
 *.iml
